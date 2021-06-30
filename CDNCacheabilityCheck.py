@@ -83,7 +83,7 @@ for bucket in buckets:
         else:
             response_cache_control_list.append("Not Set")
 
-print("\nCompleted processing {} files".format(blob_count))
+print("\nCompleted. Total Number of Objects Processed: {}".format(blob_count))
 
 table = {
     'Object-Name': blob_list,
@@ -95,6 +95,6 @@ table = {
     'Metadata-Content-Type': blob_metadata_content_type_list
 }
 
-df = pd.DataFrame(table)
+results_tbl = pd.DataFrame(table)
 
-df.to_csv("Results.csv")
+results_tbl.to_csv("Results.csv")
