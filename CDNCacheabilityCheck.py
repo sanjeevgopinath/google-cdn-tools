@@ -1,3 +1,18 @@
+# Author: Sanjeev Gopinath
+
+# This script is useful for identifying CDN Cacheability of objects stored in Google Cloud Storage
+# - Gets cache control, content-type settings from object metadata
+# - Gets cache control, content-type settings as observed by response to a HEAD request to Object's public URL
+# The Results are stored in Results.csv file
+
+# WARNING:
+# ---------
+# 1. Not tested for production use.
+# 2. May incur charges for
+#    - Storage Class A Operations (list buckets, list objects)
+#    - Network Egress (head request against every object)
+
+
 from google.cloud import storage
 
 import pandas as pd
@@ -82,4 +97,4 @@ table = {
 
 df = pd.DataFrame(table)
 
-df.to_csv("result.csv")
+df.to_csv("Results.csv")
