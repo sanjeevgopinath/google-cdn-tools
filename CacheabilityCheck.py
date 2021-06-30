@@ -49,7 +49,7 @@ for bucket in buckets:
             blob_metadata_content_type_list.append("Not Set")
 
         # Constructing the URL using Bucket name and Blob Name
-        blob_url = "https://storage.cloud.google.com/{}/{}".format(bucket.name,blob.name)  
+        blob_url = "https://storage.googleapis.com/{}/{}".format(bucket.name,blob.name)  
         url_list.append(blob_url)
 
         # HTTP request to retrieve headers. equivalent of CURL -I
