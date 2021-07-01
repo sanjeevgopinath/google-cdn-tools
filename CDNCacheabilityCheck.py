@@ -38,6 +38,11 @@ for bucket in buckets:
 
     for blob in blobs:
         
+        # Is it a folder? If yes, skip.
+        if(blob.name.endswith("/")):
+            print("Found Folder {}".format(blob.name))
+            continue
+        
         blob_count = blob_count + 1
         print("Processing Object #{}".format(blob_count))
 
