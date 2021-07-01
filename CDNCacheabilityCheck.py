@@ -38,7 +38,7 @@ for bucket in buckets:
 
     for blob in blobs:
         
-        # Is it a folder? If yes, skip.
+        # Ignore folders
         if(blob.name.endswith("/")):
             print("Found Folder {}".format(blob.name))
             continue
